@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import './App.css';
-
+import myContacts from './data/contacts.json';
+import Contact from './components/Contact'
 // Uncomment untuk memuat daftar kontak
 // import contactsJSON from './data/contacts.json';
 const App = () => {
@@ -8,10 +10,12 @@ const App = () => {
   // https://mui.com/material-ui/react-list/#folder-list
 
   // Masukkan contacts yang sudah didapat dalam JSON sebagai initial state
+  const [contacts, setContacts] = useState(myContacts);
   // Buatlah handler untuk menambahkan kontak baru yang akan dikirim ke ContactForm
 
   return (
     <div className="App">
+      <Contact data={contacts} />
     </div>
   );
 };

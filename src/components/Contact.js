@@ -7,7 +7,20 @@ import React from 'react';
 // atau langsung tambahkan dengan sx={{}}
 const Contact = ({ data }) => {
     // Contact berisi foto, nama, telepon, dan email
-    return (<></>);
+
+    return (
+        <><ul>
+            {data.map((contact, index) => (
+                <li key={index}>
+                    <img src={contact.photo} alt={`foto ${contact.name}`} />
+                    <p>{contact.name}</p>
+                    <p>{contact.phone}</p>
+                    <p>{contact.email}</p>
+                </li>
+            ))}
+        </ul>
+
+        </>);
 };
 
 export default Contact;
